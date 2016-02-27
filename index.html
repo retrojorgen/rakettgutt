@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<meta charset="UTF-8">
+<link rel="stylesheet" href="stylesheets/screen.css" type="text/css">
+<link href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,100,300,400italic,700' rel='stylesheet' type='text/css'>
+<script src="https://code.jquery.com/jquery-2.2.1.js"></script>
+<script src="http://www.nettavisen.no/templates/v1/sites/spmg/js/TweenMax.min.js"></script>
+
+<body>
+	<header class="header">
+		<a href="/" class="logo">
+			<img src="img/rakettgutt-logo.png">
+		</a>
+	</header>
+	<div class="super">
+		<div class="cover" style="background-image: url(img/artikkel-1.jpg)"></div>
+		<div class="headline">
+			<h2><span>De styggeste og lekreste figurene fra Master of the Universe (He-man)</span></h2>
+		</div>
+	</div>
+	<div class="articles-wrapper">
+		<div class="row-1">
+			<div class="article absolute">
+				<article>
+					<div class="cover" style="background-image: url(img/artikkel-2.jpg)"></div>
+					<div class="border"></div>
+					<div class="headline">
+						<h2 class="stretch-big"><span>De styggeste og lekreste figurene fra Master of the Universe (He-man)</span></h2>
+					</div>
+				</article>
+			</div>
+			<div class="article">
+				<article>
+					<div class="cover">
+						<img src="img/artikkel-3.jpg">
+					</div>
+					<div class="border"></div>
+					<div class="headline">
+						<h2 class="stretch-big"><span>Bli kongen av arkaden</span></h2>
+						<h3 class="stretch-small"><span>En 20 år gammel hemmelighet fra arkademaskinen er avdekket</span></h3>
+					</div>
+				</article>
+			</div>
+			<div class="article">
+				<article>
+					<div class="cover">
+						<img src="img/artikkel-4.jpg">
+					</div>
+					<div class="border"></div>
+					<div class="headline">
+						<h2 class="stretch-big"><span>Denne karen har den kjipeste jobben på hele Galtvort</span></h2>
+						<h3 class="stretch-small"><span>Og nå har han starten en blogg om den</span></h3>
+					</div>
+				</article>
+			</div>
+		</div>
+		<div class="clear"></div>
+		<div class="row-2">
+			<div class="article">
+				<article>
+					<div class="cover">
+						<img src="img/artikkel-4.jpg">
+					</div>
+					<div class="border"></div>
+					<div class="headline">
+						<h2 class="stretch-big"><span>Kongen er tilbake!</span></h2>
+						<h3 class="stretch-small"><span>En 20 år gammel hemmelighet fra arkademaskinen er avdekket</span></h3>
+					</div>
+				</article>
+			</div>
+			<div class="article">
+				<article>
+					<div class="cover">
+						<img src="img/artikkel-4.jpg">
+					</div>
+					<div class="border"></div>
+					<div class="headline">
+						<h2 class="stretch-big"><span>Dette smaker vanvittig vondt!</span></h2>
+						<h3 class="stretch-small"><span>Vi tester forskjellen på japansk og norsk mat</span></h3>
+					</div>
+				</article>
+			</div>
+			<div class="article">
+				<article>
+					<div class="cover">
+						<img src="img/artikkel-2.jpg">
+					</div>
+					<div class="border"></div>
+					<div class="headline">
+						<h2 class="stretch-big"><span>Denne karen har den kjipeste jobben på hele Galtvort</span></h2>
+						<h3 class="stretch-small"><span>Og nå har han starten en blogg om den</span></h3>
+					</div>
+				</article>
+			</div>
+		</div>
+		<div class="clear"></div>
+		<div class="video-row">
+			<div class="player-wrapper">
+				<div id="player"></div>
+				<div class="cover">
+				</div>
+				<div class="headline">
+					<p class="kicker"><span></span></p>
+					<h2 class="stretch-big"><span></span></h2>
+				</div>
+				<div class="play-button-container">
+					<div class="play-button main"></div>
+				</div>
+			</div>
+			<ul id="video-playlist" class="video-playlist-container">
+				<div class="video-playlist-inner"></div>
+				<div class="swiper-arrow swiper-arrow-left"></div>
+				<div class="swiper-arrow swiper-arrow-right"></div>
+			</ul>
+		</div>
+	</div>
+	<script>
+	var testVariabel = "";
+	$(function () {
+
+		$(window).on("scroll", function () {
+			if(window.scrollY > 0) {
+				$(".header").addClass("small");
+			} else {
+				$(".header").removeClass("small");
+			}
+			
+		});
+		var alignRow = function (selector) {
+			var topHeight = 0;
+			$(selector).each(function () {
+				if($(this).outerHeight(true) > topHeight) {
+					topHeight = $(this).outerHeight(true);
+				}
+			});
+
+			$(selector).each(function () {
+				var currentElement = this;
+				if($(currentElement).outerHeight(true) < topHeight && !$(currentElement).hasClass('absolute')) {
+					var fontSizeBig = 0;
+					var fontSizeSmall = 0;
+					var bigElement = $(currentElement).find(".stretch-big");
+					var smallElement = $(currentElement).find(".stretch-small");
+					if(bigElement.length) {
+						fontSizeBig = parseInt(bigElement.css('font-size'));	
+					}
+					if(smallElement.length) {
+						fontSizeSmall = parseInt(smallElement.css('font-size'));
+					}
+					
+					var counter = 0;
+					var blaInterval = setInterval(function () {
+						counter++;
+						if(fontSizeBig) {
+							fontSizeBig += 1;
+							bigElement.css('font-size', fontSizeBig);	
+						}
+						if(fontSizeSmall) {
+							fontSizeSmall += 0.5;
+							smallElement.css('font-size', fontSizeSmall);	
+						}
+
+						if($(currentElement).outerHeight(true) >= topHeight && counter < 100) {
+							clearInterval(blaInterval);
+						}
+					}, 10);
+					
+					
+				}
+				console.log('hest', topHeight);
+			});
+
+			$(selector).each(function () {
+				if($(this).outerHeight(true) > topHeight) {
+					topHeight = $(this).outerHeight(true);
+				}
+			});
+
+			console.log('topheight', topHeight);
+			$(selector).each(function () {
+				console.log($(this));
+				//$(this).css('height', topHeight);
+			});
+			
+
+		};
+
+		alignRow(".row-1 .article");
+		alignRow(".row-2 .article");
+	});
+	</script>
+	<script src="video-player.js"></script>
+</body>
+</html>
