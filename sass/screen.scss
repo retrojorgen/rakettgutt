@@ -108,6 +108,100 @@ body {
 		}
 	}
 
+	&.four {
+		article:nth-child(1) {
+			width: 66.66%;
+			height: 100%;
+			float: left;
+			.headline {
+				h2 {
+					font-size: 50px;
+					line-height: 50px;
+				}
+			}
+		}
+		article:nth-child(2) {
+			width: 33.33%;
+			height: 33.33%;
+			float: left;
+			.headline {
+				h2 {
+					font-size: 30px;
+					line-height: 30px;
+				}
+			}
+		}
+		article:nth-child(3) {
+			width: 33.33%;
+			height: 33.33%;
+			float: left;
+			.headline {
+				h2 {
+					font-size: 30px;
+					line-height: 30px;
+				}
+			}
+		}
+		article:nth-child(4) {
+			width: 33.33%;
+			height: 33.33%;
+			float: left;
+			.headline {
+				h2 {
+					font-size: 30px;
+					line-height: 30px;
+				}
+			}
+		}
+	}
+
+	&.four-alternative {
+		article:nth-child(1) {
+			width: 33.33%;
+			height: 100%;
+			float: left;
+			.headline {
+				h2 {
+					font-size: 50px;
+					line-height: 50px;
+				}
+			}
+		}
+		article:nth-child(2) {
+			width: 33.33%;
+			height: 100%;
+			float: left;
+			.headline {
+				h2 {
+					font-size: 50px;
+					line-height: 50px;
+				}
+			}
+		}
+		article:nth-child(3) {
+			width: 33.33%;
+			height: 50%;
+			float: left;
+			.headline {
+				h2 {
+					font-size: 30px;
+					line-height: 30px;
+				}
+			}
+		}
+		article:nth-child(4) {
+			width: 33.33%;
+			height: 50%;
+			float: left;
+			.headline {
+				h2 {
+					font-size: 30px;
+					line-height: 30px;
+				}
+			}
+		}
+	}
+
 	article {
 		overflow: hidden;
 		.cover {
@@ -116,21 +210,60 @@ body {
 			height: 100%;
 			left: 0;
 			top: 0;
-			background-image: cover;
+			background-size: cover;
 			background-position: center center;
 			@include transition(0.25s ease-in-out);
+			&.video {
+				video {
+					position: absolute;
+					min-height: 110%;
+					min-width: 110%;
+					left: -5%;
+					top: -5%;
+				}
+			}
+		}
+		&:after {
+			content: "";
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			left: 0;
+			top: 0;
+			@include box-shadow(rgba(0,0,0,0.4) 0 0 60px inset);
 		}
 
 		.headline {
 			position: absolute;
 			width: 100%;
 			bottom: 20px;
+			h4 {
+			    font-size: 20px;
+			    line-height: 20px;
+			    letter-spacing: 0;
+					color: #fff;
+	        width: 80%;
+	        margin: 0 auto;
+	        font-weight: normal;
+
+					span {
+						margin-left: -20px;
+					    background: darken($blueColor, 20%);
+					    -webkit-box-decoration-break: clone;
+					    box-decoration-break: clone;
+					    display: inline-block;
+					    padding: 8px 20px 8px 20px;
+					    font-size: 12px;
+					    text-transform: uppercase;
+					}
+
+			}
 			h2 {
 			    font-size: 70px;
-			    line-height: 84px;
+			    line-height: 70px;
 			    letter-spacing: 0;
 		        color: #fff;
-		        max-width: 80%;
+		        width: 80%;
 		        margin: 0 auto;
 		        font-weight: thin;
 				span {
@@ -200,7 +333,7 @@ article {
 			    line-height: 44px;
 			    letter-spacing: 0;
 		        color: #fff;
-		        max-width: 80%;
+		        width: 80%;
 		        margin: 0 auto;
 		        font-weight: thin;
 				span {
@@ -357,9 +490,52 @@ article {
 			color: rgb(100,100,100);	
 		}
 	}
-
-
 }
+
+.row-3 {
+	.article:nth-child(1) {
+		width: 25%;
+		float: left;
+		padding: 20px 10px 20px 20px;
+	}
+
+	.article:nth-child(2) {
+		width: 25%;
+		float: left;	
+		padding: 20px 20px 20px 10px;
+	}
+
+	.article:nth-child(3) {
+		width: 25%;
+		float: left;	
+		padding: 20px 20px 20px 10px;
+	}
+	.article:nth-child(4) {
+		width: 25%;
+		float: left;	
+		padding: 20px 20px 20px 10px;
+	}
+
+	.cover {
+		img {
+			max-width: 100%;
+		}
+	}
+
+	.headline {
+		padding: 20px 0px 20px 0px;
+		h2 {
+			font-size: 40px;	
+			color: rgb(50,50,50);
+		}
+		h3 {
+			margin-top: 10px;
+			font-size: 20px;
+			color: rgb(100,100,100);	
+		}
+	}
+}
+
 .video-row {
 	background-color: black;
 	overflow: hidden;
@@ -515,4 +691,30 @@ article {
 
 .clear {
 	clear: both;
+}
+
+
+.headline {
+	h4 {
+			    font-size: 20px;
+			    line-height: 20px;
+			    letter-spacing: 0;
+					color: #fff;
+	        width: 100%;
+	        margin: 0 auto;
+	        font-weight: normal;
+          margin-bottom: 20px;
+
+					span {
+					    background: $blueColor;
+					    -webkit-box-decoration-break: clone;
+					    box-decoration-break: clone;
+					    display: inline-block;
+					    padding: 8px 20px 8px 20px;
+					    font-size: 12px;
+					    text-transform: uppercase;
+
+					}
+
+			}
 }
