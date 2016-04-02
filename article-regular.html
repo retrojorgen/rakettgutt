@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<meta charset="UTF-8">
+<link rel="stylesheet" href="stylesheets/screen.css" type="text/css">
+<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,700,400italic' rel='stylesheet' type='text/css'>
+<script src="https://code.jquery.com/jquery-2.2.1.js"></script>
+<script src="http://www.nettavisen.no/templates/v1/sites/spmg/js/TweenMax.min.js"></script>
+
+<body>
+	<header class="header">
+		<a href="/" class="logo">
+			<img src="img/rakettgutt-logo.png">
+		</a>
+	</header>
+	<!--
+	<div class="super single">
+		<article>
+			<div class="cover" style="background-image: url(img/artikkel-1.jpg)"></div>
+			<div class="headline">
+				<h4><span>Komplett guide</span></h4>
+				<h2><span>De styggeste og lekreste figurene fra Master of the Universe (He-man)</span></h2>
+			</div>
+		</article>
+	</div>
+
+	<div class="super single">
+		<article>
+			<div class="cover video" style="background-image: url(img/artikkel-1.jpg)">
+				<video autoplay muted loop>
+					<source src="img/video-artikkel-1.mp4"></source>
+				</video>
+			</div>
+			<div class="headline">
+				<h2><span>De styggeste og lekreste figurene fra Master of the Universe (He-man)</span></h2>
+			</div>
+		</article>
+	</div>
+-->
+
+<div class="articles-wrapper">
+	<article class="main-article">
+		<header>
+			<div class="title">
+				<h1><span>De styggeste og lekreste figurene fra He-Man</span></h1>
+				<h2><span>En 20 år gammel hemmelighet fra arkademaskinen er avdekket</span></h2>
+			</div>
+			<img src="article-1/artikkel-full-he-man.jpg">
+		</header>
+		<main>
+			<p>Fresh off race-bending Hermione in Harry Potter and the Cursed Child, J.K. Rowling has announced she’ll be doing some gender-bending in a re-release of the Harry Potter series.</p>
+
+			<p>It turns out that publishing illustrated re-releases of the Harry Potter series isn’t enough for the author, who clearly is eager to rev up the fandom ahead of Fantastic Beasts and The Cursed Child. On Friday, Rowling announced that she plans to publish one gender-bent Harry Potter book per year beginning this December.</p>
+
+			<p>But Rowling insists it wasn’t Life and Death that caused this gender-bending series.</p>
+			<figure>
+				<img src="article-1/artikkel-he-man-figur.jpg">
+				<figcaption>Den første He-Man figuren i historien</figcaption>
+			</figure>
+			<p>“No, it wasn’t Ms. Meyer who inspired me,” said Rowling. “Warner Brothers came to me last summer asking if they were allowed to reboot the Harry Potter movies yet, and the way the studio’s CEO, Kevin Tsujihara, said ‘Harry’… he kind of coughed through the name, and to me it sounded like he said ‘Helen.’ And then suddenly, an idea popped into my head about what a female Harry named Helen would look like. And once it was lodged in my head, I couldn’t let it go.”</p><blockquote>Jeg tror ikke jeg hadde noen anelse hvem som sa det</blockquote>
+
+			<p>
+			She began <a href="http://www.vg.no">writing</a> the gender-bent series that night. “It was surprisingly easy,” she said. “The only person I had difficulty swapping was Professor McGonagall, who is just such a bad bitch. How could I take away such a <p>strong female character? So I just decided to keep her as-is. Hope no one minds!”</p>
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/65pR9EdmSNc" frameborder="0" allowfullscreen></iframe>
+			<p>
+			She began writing the gender-bent series that night. “It was surprisingly easy,” she said. “The only person I had difficulty swapping was Professor McGonagall, who is just such a bad bitch. How could I take away such a <p>strong female character? So I just decided to keep her as-is. Hope no one minds!”</p>
+			<iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/256821082&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+			<p>It turns out that publishing illustrated re-releases of the Harry Potter series isn’t enough for the author, who clearly is eager to rev up the fandom ahead of Fantastic Beasts and The Cursed Child. On Friday, Rowling announced that she plans to publish one gender-bent Harry Potter book per year beginning this December.</p>
+
+		</main>
+	</article>
+</div>
+<!--
+<div class="video-row">
+			<div class="player-wrapper">
+				<div id="player"></div>
+				<div class="cover">
+				</div>
+				<div class="headline">
+					<p class="kicker"><span></span></p>
+					<h2 class="stretch-big"><span></span></h2>
+				</div>
+				<div class="play-button-container">
+					<div class="play-button main"></div>
+				</div>
+			</div>
+			<ul id="video-playlist" class="video-playlist-container">
+				<div class="video-playlist-inner"></div>
+				<div class="swiper-arrow swiper-arrow-left"></div>
+				<div class="swiper-arrow swiper-arrow-right"></div>
+			</ul>
+		</div>
+		-->
+		<div class="clear"></div>
+	<script>
+		$(function () {
+			$('figure').each(function () {
+				if($(this).find('img').length) {
+					$(this).css('width', $(this).find('img').width());
+				}
+			});
+
+			// fix ratio youtube
+			$('iframe').each(function () {
+				if($(this).attr("src").indexOf("youtube") > -1) {
+					var currentHeight = $(this).attr("height");
+					var currentWidth = $(this).attr("width");
+					var newWidth = $(".articles-wrapper").width();
+					var newHeight = (currentHeight / currentWidth) * newWidth;
+
+					$(this).attr("height", newHeight);
+					$(this).attr("width", newWidth);
+				}
+			});
+		});
+	</script>
+	<script src="video-player.js"></script>
+</body>
+</html>
