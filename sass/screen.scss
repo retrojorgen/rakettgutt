@@ -6,6 +6,11 @@
 @import "compass/reset";
 @import "compass";
 
+$mobileOverride: "only screen and (max-width : 700px)";
+
+@media #{$mobileOverride} {
+
+}
 
 
 $blueColor : #3ab0dd;
@@ -31,6 +36,10 @@ body {
 .articles-wrapper {
 	max-width: 1000px;
 	margin: 0 auto;
+
+	@media #{$mobileOverride} {
+		max-width: 100%;
+	}
 	
 	&.special-wrapper {
 		width: 100%;
@@ -42,7 +51,7 @@ body {
 
 .header {
 	  z-index: 2000;
-	  width: 1000px;
+	  width: 100%;
 	  height: 186px;
 	  margin: 0 auto;
 	  color: #fff;
@@ -52,6 +61,11 @@ body {
 	  padding-bottom: 0;
 	  pointer-events: none;
 	  border-bottom: 1px solid white;
+		@media #{$mobileOverride} {
+			background-size: cover;
+			background-position: center top;
+			height: 148px;
+		}
 	  .logo {
 	  	position: relative;
 	  	display: block;
@@ -60,6 +74,9 @@ body {
 	  		position: relative;
 	  		display: block;
 	  		margin: 0 auto;
+				@media #{$mobileOverride} {
+					max-width: 100%;
+				}
 	  	}
   		&:after {
 	  			content:"Bloggen for geeks. Oppdatert daglig";
@@ -76,11 +93,13 @@ body {
 
 .super {
 	position: relative;
-	width: 1000px;
-	max-width: 100%;
+	width: 100%;
 	height: 623px;
 	margin: 0 auto;
 	overflow: hidden;
+	@media #{$mobileOverride} {
+		height: 550px;
+	}
 
 	.gradient-cover {
 		position: absolute;
@@ -100,6 +119,9 @@ body {
 		background-size: cover;
 		background-position: center center;
 		@include transition(0.25s ease-in-out);
+		@media #{$mobileOverride} {
+			background-position: top center;
+		}
 		&.video {
 			video {
 				position: absolute;
@@ -109,7 +131,11 @@ body {
 				max-height: 150%;
 				left: -5%;
 				top: -5%;
+				@media #{$mobileOverride} {
+					display: none;
+				}
 			}
+			
 		}
 	}
 
@@ -137,7 +163,9 @@ body {
     margin: 0 auto;
     font-weight: normal;
     text-align: center;
-
+    @media #{$mobileOverride} {
+    	display: none;
+    }
 		span {
 		    -webkit-box-decoration-break: clone;
 		    box-decoration-break: clone;
@@ -155,6 +183,11 @@ body {
 		bottom: 10px;
 		left: 20px;
 		border-right: 20px solid transparent;
+		@media #{$mobileOverride} {
+			left: 2px;
+			border-right: 2px solid transparent;
+			bottom: 2px;
+		}
 	}
 
 	&.five {
@@ -176,6 +209,12 @@ body {
 		    line-height: 40px;
 		    text-transform: uppercase;
 		    font-weight: 800;
+		    @media #{$mobileOverride} {
+		    	text-transform: none;
+		    	font-size: 24px;
+		    	line-height: 30px;
+		    	font-weight: normal;
+		    }
 		    span {
 		    	background-color: darken(rgba(#ea1ea9, 0.8), 20%);
 		    	box-shadow: 10px 0 0 darken(rgba(#ea1ea9, 0.8), 20%), -10px 0 0 darken(rgba(#ea1ea9, 0.8), 20%);
@@ -202,6 +241,12 @@ body {
 		    	background-color: darken(rgba(#8cba19, 0.8), 20%);
 		    	box-shadow: 10px 0 0 darken(rgba(#8cba19, 0.8), 20%), -10px 0 0 darken(rgba(#8cba19, 0.8), 20%);
 		    }
+		    @media #{$mobileOverride} {
+		    	text-transform: none;
+		    	font-size: 24px;
+		    	line-height: 30px;
+		    	font-weight: normal;
+		    }
 			}
 			border-bottom: 1px solid white;
 		}
@@ -214,10 +259,16 @@ body {
 				width: 34%;
 				height: 40%;
 				h1 {
-					font-size: 16px;
-			    line-height: 24px;
+					font-size: 20px;
+			    line-height: 28px;
 			    text-transform: uppercase;
 			    font-weight: 800;
+			    @media #{$mobileOverride} {
+			    	text-transform: none;
+			    	font-size: 16px;
+			    	line-height: 24px;
+			    	font-weight: normal;
+			    }
 				}
 			}
 			article:nth-child(1) {
@@ -263,6 +314,9 @@ body {
 	.row-1-articles {
 		width: 66.66%;
 		float: left;
+		@media #{$mobileOverride} {
+			width: 100%;
+		}
 		article {
 			width: 50%;
 			float: left;
@@ -273,6 +327,10 @@ body {
 				height: 200px;
 				background-size: cover;
 				position: relative;
+
+				@media #{$mobileOverride} {
+					background-position: top center;
+				}
 		    h4 {
 		    	position: absolute;
 		    	bottom: 0;
@@ -297,6 +355,9 @@ body {
 		    font-size: 15px;
 		    width: 100%;
 		    zoom: 1;
+		    @media #{$mobileOverride} {
+		    	padding: 16px 6px 16px 6px;
+		    }
 			}
 			h1 {
 				-webkit-font-smoothing: antialiased;
@@ -312,6 +373,10 @@ body {
 		    margin-right: 0px;
 		    margin-top: 1px;
 		    zoom: 1;
+				@media #{$mobileOverride} {
+					font-size: 20px;
+					line-height: 21px;
+				}
 
 			}
 			p {
@@ -320,10 +385,17 @@ body {
 			}
 			&:nth-child(2n+1) {
 				padding-right: 5px;
+				@media #{$mobileOverride} {
+					padding-right: 2px;
+				}
 			}
 			&:nth-child(2n+2) {
 				padding-left: 5px;
 				padding-right: 5px;
+				@media #{$mobileOverride} {
+					padding-right: 0;
+					padding-left: 2px;
+				}
 			}
 		}
 	}
@@ -333,6 +405,11 @@ body {
 		vertical-align: top;
 		
 		padding-left: 5px;
+
+		@media #{$mobileOverride} {
+			width: 100%;
+		}
+
 		article {
 	    border-bottom: 1px dashed white;
 			width: 100%;
@@ -527,6 +604,9 @@ body {
 			    		font-weight: thin;
 			    	}
 			    }
+			    @media #{$mobileOverride} {
+			    	background-position: top center;
+			    }
 				}
 				.headline {
 					padding: 16px 16px 16px 16px;
@@ -538,6 +618,9 @@ body {
 			    font-size: 15px;
 			    width: 100%;
 			    zoom: 1;
+			    @media #{$mobileOverride} {
+			    	padding: 16px 6px 16px 6px;
+			    }
 				}
 				h1 {
 					-webkit-font-smoothing: antialiased;
@@ -553,7 +636,11 @@ body {
 			    margin-right: 0px;
 			    margin-top: 1px;
 			    zoom: 1;
-
+  				@media #{$mobileOverride} {
+						font-size: 20px;
+				    line-height: 23px;
+				    font-weight: bold;
+					}
 				}
 				p {
 					color: #4b4b4b;
@@ -561,13 +648,23 @@ body {
 				}
 				&:nth-child(1) {
 					padding-right: 5px;
+					@media #{$mobileOverride} {
+						padding-right: 2px;
+					}
 				}
 				&:nth-child(2) {
 					padding-left: 5px;
 					padding-right: 5px;
+					@media #{$mobileOverride} {
+						padding-right: 2px;
+						padding-left: 2px;
+					}
 				}
 				&:nth-child(3) {
 					padding-left: 5px;
+					@media #{$mobileOverride} {
+						padding-left: 2px;
+					}
 				}
 			}
 	}
@@ -681,6 +778,10 @@ body {
 	    margin: 0;
 	    font-weight: 300;
 	    line-height: 1.3;
+			@media #{$mobileOverride} {
+				font-size: 52px;
+				line-height: 1.2;
+			}
 
 		}
 		h2 {
@@ -699,8 +800,14 @@ body {
 		margin: 0 auto;
 		max-width: 100%;
 		margin-bottom: 20px;
+		img {
+			max-width: 100%;
+		}
 		figcaption {
 			padding: 10px 0 10px 0;
+	    @media #{$mobileOverride} {
+	    	padding: 10px 10px 10px 10px;
+	    }
 		}
 	}
 
@@ -716,11 +823,29 @@ body {
 	    margin: 0 auto;
 	    margin-bottom: 20px;
 	    font-weight: 300;
+	    @media #{$mobileOverride} {
+	    	padding: 0 20px 0 20px;
+	    }
 		}
 		>iframe {
 			margin: 0 auto;
 			margin-bottom: 20px;
 
+		}
+
+		h1,h2,h3,h4,h5,h6 {
+				font-weight: 300;
+		    color: #1D5471;
+		    font-size: 23px;
+		    text-transform: uppercase;
+		    max-width: 800px;
+		    margin: 0 auto;
+		    margin-top: 20px;
+		    margin-bottom: 20px;
+		    font-weight: bold;
+		    @media #{$mobileOverride} {
+		    	padding: 0 20px 0 20px;
+		    }
 		}
 
 		a {
@@ -755,8 +880,23 @@ body {
 		height: auto;
 		.logo {
 			margin-top: 0;
+			text-align: center;
+			img {
+				display: inline-block;
+		    transform: translateX(-88px);
+			}
 			&:after {
-				display: none;
+				    content: "Spesial";
+				    text-transform: uppercase;
+				    top: -23px;
+				    left: 50%;
+				    font-weight: bold;
+		        margin-left: 12px;
+				    font-size: 34px;
+				    color: #fdc621;
+				    width: auto;
+				    display: inline-block;
+				    @include text-shadow(#d1241b -2px 0 1px);
 			}
 			img {
 				max-width: 183px;
@@ -770,36 +910,69 @@ body {
 	background-color: black;
 	header {
 		width: 100%;
-		height: 100%;
+		height: 120%;
 		background-color: black;
 		background-position: center center;
 		margin-bottom: 0;
+		position: relative;
+		overflow: hidden;
 		h1 {
 			font-weight: bold;
 			font-size: 80px;
 			color: black;
 			@include text-shadow(#fad00d 0 0 4px);
+			@media #{$mobileOverride} {
+				font-size: 53px;
+			}
 		}
 		h2 {
 			color: #fad00d;
 		}
+		.video-cover {
+			position: absolute;
+			left: -5%;
+			top: 0;
+			height: 0;
+			width: 110%;
+			height: 110%;
+			video {
+				width: 100%;
+			}
+			@media #{$mobileOverride} {
+				display: none;
+			}
+		}
+		.backdrop-cover {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			opacity: 0.6;
+		}
 		.title {
 			position: absolute;
-			bottom: 20px;
+			bottom: 30%;
 			width: 100%;
 			text-align: center;
 		}
 	}
 	main {
+		padding-top: 80px;
 		height: 100%;
 		width: 100%;
 	}
+
 	.layer {
 		width: 100%;
-		height: 100%;
+		min-height: 100%;
 		padding-left: 600px;
 		position: relative;
 		padding: 150px 0 150px 600px;
+
+		@media #{$mobileOverride} {
+			padding: 50px 0 50px 0px;
+		}
 		.overlay {
 			position: fixed;
 			left: 0;
@@ -810,10 +983,18 @@ body {
 			background-position: left bottom;
 			background-repeat: no-repeat;
 			opacity: 0;
-			@include transition(all 0.5s ease-in-out);
+			@include transition(all 0.1s linear);
 			&.visible {
 				opacity: 1;
-				@include transition(all 0.5s ease-in-out);
+				@include transition(all 0.1s linear);
+			}
+			@media #{$mobileOverride} {
+				position: relative;
+				left: auto;
+				bottom: auto;
+				height: 400px;
+				opacity: 1;
+				background-position: center bottom;
 			}
 		}
 		&:before {
@@ -835,6 +1016,9 @@ body {
 	    margin: 0 auto;
 	    margin-bottom: 20px;
 	    @include text-shadow(#fad00d 0 0 4px);
+			@media #{$mobileOverride} {
+				padding: 0 10px 0 10px;
+			}
 
 		}
 		h3 {
@@ -846,6 +1030,9 @@ body {
 			max-width: 600px;
 	    margin: 0 auto;
 	    margin-bottom: 40px;
+	    @media #{$mobileOverride} {
+				padding: 0 10px 0 10px;
+			}
 		}
 
 		>p {
@@ -859,6 +1046,17 @@ body {
 	    margin: 0 auto;
 	    margin-bottom: 20px;
 	    font-weight: 300;
+	    @media #{$mobileOverride} {
+				padding: 0 10px 0 10px;
+			}
 		}
+	}
+
+	.article-background {
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		left: 0;
+		top: 0;
 	}
 }
