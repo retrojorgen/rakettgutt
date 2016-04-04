@@ -48,7 +48,7 @@
                 videoPlaylist.append(newElement);
                 items.push(newElement);
                 $(".video-playlist-inner").css('height', newContainerHeight+20);
-                console.log(newElement, newElement[0].clientHeight, newElement.outerHeight(true), image.height());
+                //console.log(newElement, newElement[0].clientHeight, newElement.outerHeight(true), image.height());
                 elementsInMenu[element.snippet.position] = newElement;
               });
               items.forEach(function (item) {
