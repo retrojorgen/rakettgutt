@@ -5,6 +5,12 @@
         }
       });
 
+      $('.wp-caption').each(function () {
+        if($(this).find('img').length) {
+          $(this).css('width', $(this).find('img').width());
+        }
+      });
+
       if($("#article-identificator").length) {
         var articleIdentificator = $("#article-identificator");
         var ids = articleIdentificator.attr('attr-ids').split(",");

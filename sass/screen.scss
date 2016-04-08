@@ -101,6 +101,10 @@ body {
 		height: 550px;
 	}
 
+	>span {
+		display: none;
+	}
+
 	.gradient-cover {
 		position: absolute;
 		left: 0;
@@ -139,7 +143,7 @@ body {
 		}
 	}
 
-	article {
+	.article {
 		position: relative;
 		overflow: hidden;
 	}
@@ -255,7 +259,7 @@ body {
 			display: flex;
 			width: 100%;
 			height: 100%;
-			article {
+			.article {
 				width: 34%;
 				height: 40%;
 				h1 {
@@ -271,7 +275,7 @@ body {
 			    }
 				}
 			}
-			article:nth-child(1) {
+			.article:nth-child(1) {
 				.gradient-cover {
 					
 				}
@@ -282,7 +286,7 @@ body {
 		    }
 			}
 
-			article:nth-child(2) {
+			.article:nth-child(2) {
 				.gradient-cover {
 					
 				}
@@ -293,7 +297,7 @@ body {
 		    }
 			}
 
-			article:nth-child(3) {
+			.article:nth-child(3) {
 				.gradient-cover {
 					
 				}
@@ -317,7 +321,7 @@ body {
 		@media #{$mobileOverride} {
 			width: 100%;
 		}
-		article {
+		.article {
 			width: 50%;
 			float: left;
 			margin-bottom: 20px;
@@ -410,7 +414,7 @@ body {
 			width: 100%;
 		}
 
-		article {
+		.article {
 	    border-bottom: 1px dashed white;
 			width: 100%;
 			background-color: #e4e7ea;
@@ -454,7 +458,7 @@ body {
 				font-size: 15px;
 			}
 		}
-		article:nth-child(1n+2) {
+		.article:nth-child(1n+2) {
 			padding: 10px 15px;
 			min-height: 80px;
 			.headline {
@@ -581,7 +585,7 @@ body {
 .row-3 {
 	padding: 10px 0 10px 0;
 	.row-3-articles {
-			article {
+			.article {
 				width: 33.33%;
 				float: left;
 				margin-bottom: 20px;
@@ -795,7 +799,8 @@ body {
 		}
 	}
 
-	figure {
+	figure,
+	.wp-caption {
 		display: block;
 		margin: 0 auto;
 		max-width: 100%;
@@ -803,7 +808,8 @@ body {
 		img {
 			max-width: 100%;
 		}
-		figcaption {
+		figcaption,
+		.wp-caption-text {
 			padding: 10px 0 10px 0;
 	    @media #{$mobileOverride} {
 	    	padding: 10px 10px 10px 10px;
@@ -812,6 +818,7 @@ body {
 	}
 
 	main {
+		text-align: left;
 		>p {
 			position: relative;
 			
@@ -823,10 +830,22 @@ body {
 	    margin: 0 auto;
 	    margin-bottom: 20px;
 	    font-weight: 300;
-	    @media #{$mobileOverride} {
-	    	padding: 0 20px 0 20px;
-	    }
+		    @media #{$mobileOverride} {
+		    	padding: 0 20px 0 20px;
+		    }
+	    	img {
+	    		margin-top: 20px;
+	    		margin-bottom: 20px;
+	    		max-width: 100%;
+	    	}
 		}
+		> img {
+    		margin-top: 20px;
+    		margin-bottom: 20px;
+    		max-width: 100%;
+			margin: 0 auto;
+    		display: block;
+    	}
 		>iframe {
 			margin: 0 auto;
 			margin-bottom: 20px;
@@ -846,6 +865,11 @@ body {
 		    @media #{$mobileOverride} {
 		    	padding: 0 20px 0 20px;
 		    }
+	    	img {
+	    		margin-top: 20px;
+	    		margin-bottom: 20px;
+	    		max-width: 100%;
+	    	}
 		}
 
 		a {
