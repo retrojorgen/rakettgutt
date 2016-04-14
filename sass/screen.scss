@@ -56,6 +56,32 @@ body {
 	}
 }
 
+#rakett-gutt {
+	z-index: 3;
+}
+
+
+#rakett-gutt-small {
+	width: 280px;
+	opacity: 0.6;
+	position: absolute;
+	top: 5px;
+	left: 50%;
+	margin-left: calc(-280px/2);
+	z-index: 2;
+}
+
+#rakett-gutt-smaller {
+	width: 200px;
+	opacity: 0.4;
+	position: absolute;
+	top: -5px;
+	left: 50%;
+	margin-left: calc(-200px/2);
+	z-index: 1;
+}
+
+
 .articles-content {
 	background-color: rgb(255,250,250);
 }
