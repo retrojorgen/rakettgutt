@@ -1,4 +1,8 @@
     $(function () {
+
+      $(window).on('scroll', function () {
+
+      });
       $('figure').each(function () {
         if($(this).find('img').length) {
           $(this).css('width', $(this).find('img').width());
@@ -40,11 +44,9 @@
 
 
           $(window).on('scroll', function () {
+            console.log('scroller', window.scrollY);
             layers.forEach(function (element, index) {
               
-              if(index == 0) {
-                console.log(window.scrollY, element.offset, element.top, element.visible, (window.scrollY >= element.offset), ( window.scrollY <= element.top));
-              }
               if(window.scrollY >= element.offset && window.scrollY <= element.top && !element.visible) {
                 element.element.find('.overlay').addClass('visible');
                 element.visible = true;

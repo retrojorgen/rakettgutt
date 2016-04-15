@@ -61,6 +61,69 @@ body {
 }
 
 
+.main-navigation {
+	background-color: black;
+	border-bottom: 1px solid white;
+}
+
+.categories {
+	display: inline-block;
+	li {
+		color: white;
+		display: inline-block;
+		a {
+			display: block;
+			color: white;
+			font-weight: bold;
+			font-size: 23px;
+			text-decoration: none;
+			text-transform: uppercase;
+			letter-spacing: -1px;
+			padding: 20px 10px;
+			@include transition(0.25s ease-in-out);
+			&:hover {
+				color: #e97ded;
+
+			}
+		}
+	}
+}
+
+.social {
+	display: inline-block;
+	float: right;
+	li {
+		display: inline-block;
+	}
+}
+
+.social-icon {
+	background-image: url(../img/social.png);
+	width: 30px;
+	height: 30px;
+	overflow: hidden;
+	display: block;
+    background-size: auto 100%;
+    margin: 14px 10px;
+
+
+	&.facebook {
+
+	}
+	&.youtube {
+		    background-position: 25% 0;
+	}
+	&.github {
+		    background-position: 50% 0;
+	}
+	&.rss {
+		    background-position: 75% 0;
+	}
+	&.mail {
+		    background-position: 100% 0;
+	}
+}
+
 #rakett-gutt-small {
 	width: 280px;
 	opacity: 0.6;
