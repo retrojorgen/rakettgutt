@@ -6,14 +6,15 @@ $(function () {
 
 	var resetTimeout = function () {
 		console.log("resetting");
-		TweenMax.to("#rakett-gutt", 0.25, {x: 0, y: 0, rotation: "0deg", ease: Power4.easeOut});
-		TweenMax.to("#rakett-gutt-small", 0.25, {x: 0, y: 0, rotation: "0deg", ease: Power4.easeOut});
-		TweenMax.to("#rakett-gutt-smaller", 0.25, {x: 0, y: 0, rotation: "0deg", ease: Power4.easeOut});
+		TweenMax.to("#rakett-gutt", 1, {x: "0px", y: "0px", rotation: "0deg", ease: Power4.easeOut});
+		TweenMax.to("#rakett-gutt-small", 1, {x: "0px", y: "0px", rotation: "0deg", ease: Power4.easeOut});
+		TweenMax.to("#rakett-gutt-smaller", 1, {x: "0px", y: "0px", rotation: "0deg", ease: Power4.easeOut});
 	};
 
-	var timeout = setTimeout(resetTimeout, 1000);
+	var newTimeout = setTimeout(resetTimeout, 2000);
 	$(document).on("mousemove", function (event) {
-		
+		clearTimeout(newTimeout);
+		newTimeout = setTimeout(resetTimeout, 2000);
 		if(mousePosX == undefined) mousePosX = event.pageX;
 		if(mousePosY == undefined) mousePosY = event.pageY;
 		var movePosX = (mousePosX - event.pageX) / 15;

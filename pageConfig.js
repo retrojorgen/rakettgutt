@@ -64,14 +64,12 @@
 
       // fix ratio youtube
       $('iframe').each(function () {
-        if($(this).attr("src").indexOf("youtube") > -1) {
           var currentHeight = $(this).attr("height");
           var currentWidth = $(this).attr("width");
-          var newWidth = $(".articles-wrapper").width();
+          var newWidth = $(this).parent().width();
           var newHeight = (currentHeight / currentWidth) * newWidth;
 
           $(this).attr("height", newHeight);
           $(this).attr("width", newWidth);
-        }
       });
     });
