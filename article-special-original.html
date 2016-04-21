@@ -9,20 +9,26 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js"></script>
 
 <body>
-<div class="articles-wrapper">
+<div class="articles-wrapper special-wrapper">
 	<header class="header">
 		<a href="/" class="logo">
 			<img src="img/rakettgutt-logo.png">
 		</a>
 	</header>
 	<article class="main-article">
-		<header class="article-header">
-			<div class="title">
-				<h1><span>De styggeste og lekreste figurene fra He-Man</span></h1>
-				<h2><span>En 20 år gammel hemmelighet fra arkademaskinen er avdekket</span></h2>
-				<p class="published-byline">Publisert av <span class="byline">Jørgen Jacobsen</span><time class="time" datetime="2016-04-12 16:00">for 2 timer siden</time></p>
+		<div id="article-identificator" attr-ids="special,special-color"></div>
+		<header style="background-image:url(article-1/artikkel-full-he-man.jpg); background-size: cover;">
+			<div class="video-cover">
+				<video autoplay muted loop>
+						<source src="img/video-artikkel-1.mp4"></source>
+				</video>
+
 			</div>
-			
+			<div class="backdrop-cover" style="background-color: #430974"></div>
+			<div class="title">
+				<h1 style="color: white; text-shadow: #814fba 0 0 40px;"><span>Den legendariske drakten</span></h1>
+				<h2 style="color: #b7e0f0; text-shadow: #814fba 0 0 40px;"><span>Rakettgutt gir deg historien om Batmandrakten</span></h2>
+			</div>
 		</header>
 		<main class="main" style="background-color: #814fba">
 			<div class="special-wrap">
@@ -54,25 +60,6 @@
 	</article>
 </div>
 		<div class="clear"></div>
-			<script>
-				jsSpecialConfig = {
-						'h1-style': {
-							'color': "white",
-							"text-shadow": "#814fba 0 0 40px"
-						},
-						"h2-style": {
-							"color": "#b7e0f0",
-							"text-shadow": " #814fba 0 0 40px;"
-						},
-						"main-background": "#814fba",
-						"video-cover": "img/video-artikkel-1.mp4",
-						"video-cover-fallback": "article-1/artikkel-full-he-man.jpg",
-						"paragraph-color": "white",
-						"blockquote-color": "white",
-						"caption-color": "white"
-				}
-			</script>
-	<script src="articleConfig.js"></script>
 	<script src="pageConfig.js"></script>
 	<script src="video-player.js"></script>
 </body>
