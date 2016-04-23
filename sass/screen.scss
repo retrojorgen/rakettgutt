@@ -1097,18 +1097,50 @@ body {
 		}
 		h3 {
 			position: relative;
-			text-align: center;
-			font-size: 20px;
+			text-align: left;
+			font-size: 25px;
 			font-weight: thin;
 			color: darken(#fad00d, 20%);
-
-	    margin-bottom: 40px;
+			margin-top: 70px;
+	    margin-bottom: 30px;
 	    @media #{$mobileOverride} {
 				padding: 0 10px 0 10px;
 			}
 		}
 		blockquote {
 			margin: 10px -70px 10px 10px;
+		}
+		figcaption {
+			margin: 0 auto;
+			max-width: 700px;
+			line-height: 26px;
+		}
+		figure {
+			margin-bottom: 40px;
+			margin-top: 40px;
+			&.float {
+				max-width: 300px;
+				@media #{$mobileOverride} {
+					max-width: 100%;
+					margin: 0;
+				}
+				&.right {
+					float: right;
+			    margin: 10px -50px 10px 10px;
+			    @media #{$mobileOverride} {
+			    	float: none;
+			    	margin: 0;
+			    }
+				}
+				&.left {
+					float: left;
+					margin: 10px 10px 10px -50px;
+					@media #{$mobileOverride} {
+			    	float: none;
+			    	margin: 0;
+			    }					
+				}
+			}
 		}
 		p {
 			position: relative;
