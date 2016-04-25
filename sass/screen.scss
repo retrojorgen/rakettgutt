@@ -880,13 +880,10 @@ body {
 .main-article {
 	position: relative;
 	header {
-		padding-top: 40px;
 		text-align: center;
-		padding-bottom: 40px;
 
 		.title {
-			margin-bottom: 40px;
-			padding: 0 20px 0 20px;
+			padding: 40px 20px 60px 20px;
 		}
 		a {
 			color: #506062;
@@ -987,10 +984,21 @@ body {
 		}
 
 		.floating-inline-video {
-			float: right;
+			
+			position: relative;
+			z-index: 4000;
+			&.right {
+				float: right;
+				margin: 20px 0 20px 20px;
+			}
+			&.left {
+				float: left;
+				margin: 20px 20px 20px 0;
+			}
 			@media #{$mobileOverride} {
 				display: block;
 				float: none;
+				margin: 0;
 			}
 		}
 
@@ -1164,7 +1172,6 @@ body {
 
 	header {
 		width: 100%;
-		height: 800px;
 		background-color: black;
 		background-position: center center;
 		margin-bottom: 0;
@@ -1183,18 +1190,7 @@ body {
 			color: #fad00d;
 		}
 		.video-cover {
-			position: absolute;
-			left: -5%;
-			top: 0;
-			height: 0;
-			width: 110%;
-			height: 110%;
-			video {
-				width: 100%;
-			}
-			@media #{$mobileOverride} {
-				display: none;
-			}
+			position: relative;
 		}
 		.backdrop-cover {
 			position: absolute;
@@ -1205,14 +1201,10 @@ body {
 			opacity: 0.6;
 		}
 		.title {
-			position: absolute;
-			bottom: 30%;
-			width: 100%;
 			text-align: center;
 		}
 	}
 	.main {
-		padding-top: 80px;
 		height: 100%;
 		width: 100%;
 	}

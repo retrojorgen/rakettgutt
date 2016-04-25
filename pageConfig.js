@@ -3,17 +3,9 @@
       $(window).on('scroll', function () {
 
       });
-      $('figure').each(function () {
-        if($(this).find('img').length) {
-          $(this).css('width', $(this).find('img').width());
-        }
-      });
+      console.log('hest');
 
-      $('.wp-caption').each(function () {
-        if($(this).find('img').length) {
-          $(this).css('width', $(this).find('img').width());
-        }
-      });
+
 
       if($("#article-identificator").length) {
         var articleIdentificator = $("#article-identificator");
