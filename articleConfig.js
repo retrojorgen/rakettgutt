@@ -31,8 +31,8 @@
         if(jsSpecialConfig["h1-style"]) $(".article-header h1").css(jsSpecialConfig["h1-style"]);
         if(jsSpecialConfig["h2-style"]) $(".article-header h2").css(jsSpecialConfig["h2-style"]);
         if(jsSpecialConfig["title-style"]) $(".article-header .title").css(jsSpecialConfig["title-style"]);
-        if(jsSpecialConfig["byline-style"]) $(".article-header .byline").css(jsSpecialConfig["byline-style"]);
-        if(jsSpecialConfig["paragraph-style"]) $(".article-header p").css(jsSpecialConfig["paragraph-style"]);
+        if(jsSpecialConfig["byline-style"]) $(".article-header .published-byline").css(jsSpecialConfig["byline-style"]);
+        if(jsSpecialConfig["paragraph-style"]) $(".main p").css(jsSpecialConfig["paragraph-style"]);
         if(jsSpecialConfig["blockquote-style"]) $(".article-header blockquote").css(jsSpecialConfig["blockquote-style"]);
         if(jsSpecialConfig["main-background"]) $(".main").css('background', jsSpecialConfig["main-background"]);
         if(jsSpecialConfig["h3-style"]) $(".main h3").css(jsSpecialConfig["h3-style"]);
